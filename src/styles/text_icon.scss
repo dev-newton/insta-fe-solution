@@ -1,0 +1,18 @@
+.text_icon_wrapper {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  cursor: pointer;
+
+  i {
+    color: $primary-color;
+  }
+
+  p {
+    @include set-text-color($primary-color);
+    font-size: 20px;
+    margin-left: 10px;
+    border-bottom: 1.5px solid $primary-color;
+  }
+}

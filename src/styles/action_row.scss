@@ -1,0 +1,34 @@
+.action_wrapper {
+  .action_row {
+    display: flex;
+
+    h6 {
+      @include set-text-color($dark-grey-color);
+      font-size: 22px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.action_wrapper,
+.action_input_wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  margin-left: 50px;
+
+  hr.left {
+    border: none;
+    border-bottom: 1.5px solid $lighter-grey-color;
+    margin-right: 20px;
+    width: 80%;
+  }
+
+  hr.right {
+    border: none;
+    border-bottom: 1.5px solid $lighter-grey-color;
+    margin-left: 20px;
+    width: 80%;
+  }
+}

@@ -1,0 +1,61 @@
+@import "config";
+@import "utilities";
+@import "marker";
+@import "text_icon";
+@import "input";
+@import "action_row";
+
+.App {
+  padding: 20px;
+
+  select {
+    display: flex;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+}
+
+.route {
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-start;
+
+  &_company_wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 165px;
+
+    .pin_wrapper {
+      margin-right: 20px;
+    }
+
+    .company_location_wrapper {
+      h2 {
+        color: $secondary-color;
+        font-size: 24px;
+        font-weight: 900;
+      }
+      h6 {
+        @include set-text-color($secondary-color);
+        font-size: 22px;
+      }
+      p {
+        @include set-text-color($light-grey-color);
+        font-size: 22px;
+
+        span {
+          @include set-text-color($secondary-color);
+        }
+      }
+    }
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+}

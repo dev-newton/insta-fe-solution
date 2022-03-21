@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
+.row {
+  display: flex;
+}
+
+.text_primary {
+  @include set-text-color($secondary-color);
+}
+
+.text_muted {
+  @include set-text-color($light-grey-color);
+}
+
+.dash {
+  font-size: 24px !important;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 70px;
+}

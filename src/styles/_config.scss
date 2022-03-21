@@ -1,0 +1,17 @@
+$primary-color: #e63b09;
+$secondary-color: #1c3742;
+$dark-grey-color: #7a8287;
+$light-grey-color: rgba(28, 55, 66, 0.4);
+$lighter-grey-color: #d8d7d7;
+$white-color: #ffffff;
+$font-family: "Avenir", Helvetica, Arial, sans-serif;
+
+@mixin set-text-color($color) {
+  color: $color;
+  font-weight: 500;
+}
+
+@mixin set-select-padding($padding) {
+  padding-left: $padding;
+  margin: auto 0;
+}

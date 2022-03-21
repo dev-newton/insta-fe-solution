@@ -1,0 +1,151 @@
+.input_row_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  width: 100%;
+
+  .input_wrapper {
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+
+    p {
+      font-size: 20px;
+      margin-bottom: 5px;
+
+      &.a {
+        @include set-text-color($light-grey-color);
+      }
+    }
+
+    input,
+    select {
+      border: none;
+      border: 1.5px solid $lighter-grey-color;
+      height: 63px;
+      border-radius: 2px;
+      padding: 0 20px;
+      font-size: 18px;
+      @include set-text-color($secondary-color);
+
+      &.xl {
+        width: 630px;
+      }
+
+      &.lg {
+        width: 420px;
+      }
+
+      &.md {
+        width: 325px;
+      }
+
+      &.sm {
+        width: 255px;
+      }
+
+      &.s {
+        width: 220px;
+      }
+
+      &.xs {
+        width: 180px;
+      }
+
+      &.xxs {
+        width: 165px;
+      }
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    input[type="date"] {
+      position: relative;
+    }
+
+    input::placeholder {
+      text-align: right;
+      color: $lighter-grey-color;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: auto;
+      height: auto;
+      color: transparent;
+      background: transparent;
+      z-index: 1;
+    }
+
+    &.select {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      .pad_60 {
+        @include set-select-padding(60px);
+      }
+
+      .pad_80 {
+        @include set-select-padding(80px);
+      }
+
+      i {
+        position: absolute;
+        right: 0;
+        top: 55px;
+        color: $lighter-grey-color;
+        padding: 0 30px;
+        font-size: 18px;
+        font-weight: 900;
+      }
+    }
+
+    &.time {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      .pad_60 {
+        @include set-select-padding(60px);
+      }
+
+      .pad_80 {
+        @include set-select-padding(80px);
+      }
+
+      p {
+        position: absolute;
+        color: $lighter-grey-color;
+        padding: 0 30px;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 18px;
+      }
+
+      i {
+        position: absolute;
+        right: 0;
+        color: $lighter-grey-color;
+        padding: 0 30px;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 18px;
+        font-weight: 900;
+      }
+    }
+  }
+}
