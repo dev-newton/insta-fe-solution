@@ -12,20 +12,20 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
   const [value, setValue] = useState({});
   const [open, setOpen] = useState(false);
 
-  const { address, company, openingHours, schedule } = stop;
   const getMarkerType = counter === length ? "icon" : "text";
+  const { address, company, openingHours, schedule } = stop;
+
+  let date = schedule.start.split(" ")[0];
+  let start_time = schedule.start.split(" ")[1];
+  let end_time = schedule.end.split(" ")[1];
 
   const handleInputChange = (event) => {
-    setValue({
-      [event.target.name]: event.target.value,
-    });
+    setValue({ ...value, [event.target.name]: event.target.value });
   };
 
   const handleClick = () => {
     setOpen(!open);
   };
-
-  console.log(schedule);
 
   let label;
   let color;
@@ -62,7 +62,7 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
       color = "primary";
       showInput = true;
     } else {
-      label = { date: "Arrival date" };
+      label = { date: "Arrival date", from: "From", to: "To" };
       color = "primary";
       showInput = true;
     }
@@ -73,13 +73,14 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
     scheduleInput = (
       <div className="input_row_wrapper">
         <Input
-          name="date"
           label={label}
           size="xl"
           color={color}
           type="date"
           onChange={handleInputChange}
           showInput={showInput}
+          name={`date_${counter}`}
+          value={value[`date_${counter}`] || date}
         />
       </div>
     );
@@ -94,6 +95,8 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
           type="date"
           onChange={handleInputChange}
           showInput={showInput}
+          name={`date_${counter}`}
+          value={value[`date_${counter}`] || date}
         />
         <Input
           label={label.from}
@@ -102,6 +105,8 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
           type="time"
           onChange={handleInputChange}
           showInput={showInput}
+          name={`from_${counter}`}
+          value={value[`from_${counter}`] || start_time}
         />
         <Input
           label={label.to}
@@ -110,6 +115,8 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
           type="time"
           onChange={handleInputChange}
           showInput={showInput}
+          name={`to_${counter}`}
+          value={value[`to_${counter}`] || end_time}
         />
       </div>
     );
@@ -125,24 +132,27 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
           type="date"
           onChange={handleInputChange}
           showInput={showInput}
+          value={value[`date_${counter}`] || date}
         />
         <Input
-          name={`date_${counter}`}
           label={label.from}
           size="xs"
           color={color}
           type="time"
           onChange={handleInputChange}
           showInput={showInput}
+          name={`from_${counter}`}
+          value={value[`from_${counter}`] || start_time}
         />
         <Input
-          name={`date_${counter}`}
           label={label.to}
           size="xs"
           color={color}
           type="time"
           onChange={handleInputChange}
           showInput={showInput}
+          name={`to_${counter}`}
+          value={value[`to_${counter}`] || end_time}
         />
       </div>
     );
@@ -151,6 +161,7 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
   return (
     <>
       <div className="route">
+        {console.log(234, value)}
         <div className="route_company_wrapper">
           <Marker type={getMarkerType} value={counter} />
           <LocationDetails

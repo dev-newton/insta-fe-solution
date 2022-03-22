@@ -1,6 +1,3 @@
-import { useEffect, useRef } from "react";
-import { getCurrentDate } from "@helpers";
-
 const Input = ({
   type,
   size,
@@ -12,14 +9,6 @@ const Input = ({
   placeholder,
   showInput = true,
 }) => {
-  const inputRef = useRef();
-
-  useEffect(() => {
-    if (type === "date") {
-      inputRef.current?.setAttribute("min", getCurrentDate());
-    }
-  }, []);
-
   return (
     <div className={`input_wrapper ${type}`}>
       <p className={`text_${color}`}>{label}</p>
@@ -27,7 +16,6 @@ const Input = ({
         <>
           <input
             name={name}
-            ref={inputRef}
             className={`input ${size} ${type === "time" && "pad_80"}`}
             type={type}
             value={value}
