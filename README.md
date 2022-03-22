@@ -45,4 +45,11 @@ yarn test
   create-react-app installs at least 800 packages as opposed to webpack which installs less than half of that amount.
 - Made use of absolute imports to make the code cleaner and easier to write, and also prevents the use of `../../../` which
   in the long run, makes the code harder to read
-- Wrote integration tests to ensure task criteria were met
+- Wrote integration tests to ensure task criteria were met, to safeguard against unwanted behavior, and to ensure the application behaves as expected
+
+### Future Improvements
+-  Write more unit and integration tests
+-  Write e2e tests to ensure everything works from begining to end
+-  Make UI match more closely to Images provided
+-  Implement Typescript to ensure proper static type checking, and to make maintenance and refactoring much easier
+-  
