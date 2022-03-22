@@ -5,9 +5,9 @@ const path = require("path");
 module.exports = {
   resolve: {
     alias: {
-      "@components": path.resolve(__dirname, "src/components"),
-      "@helpers": path.resolve(__dirname, "src/helpers"),
-      "@hooks": path.resolve(__dirname, "src/hooks"),
+      components: path.resolve(__dirname, "src/components"),
+      helpers: path.resolve(__dirname, "src/helpers"),
+      hooks: path.resolve(__dirname, "src/hooks"),
     },
   },
   entry: "./src",
@@ -18,6 +18,7 @@ module.exports = {
   devServer: {
     port: 3000,
     static: true,
+    open: true,
   },
   module: {
     rules: [
