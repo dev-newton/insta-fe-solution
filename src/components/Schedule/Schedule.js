@@ -1,10 +1,12 @@
 import { useState } from "react";
-import ActionRow from "../ActionRow/ActionRow";
-import CargoItemForm from "../CargoItemForm/CargoItemForm";
-import Input from "../Input/Input";
-import LocationDetails from "../LocationDetails/LocationDetails";
-import Marker from "../Marker/Marker";
-import TextIcon from "../TextIcon/TextIcon";
+import {
+  ActionRow,
+  CargoItemForm,
+  Input,
+  LocationDetails,
+  Marker,
+  TextIcon,
+} from "../../components";
 
 const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
   const [value, setValue] = useState({});

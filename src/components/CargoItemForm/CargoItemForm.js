@@ -1,7 +1,6 @@
-import Input from "../Input/Input";
-import Select from "../Input/Select";
+import { Select, Input } from "../../components";
 
-const CargoItemForm = ({ onChange, value }) => {
+const CargoItemForm = ({ onChange }) => {
   return (
     <div className="action_input_wrapper">
       <div className="route_wrapper">

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import TextIcon from "../TextIcon/TextIcon";
+import { TextIcon } from "../../components";
 
 const ActionRow = ({
   position,
@@ -37,7 +37,6 @@ const ActionRow = ({
 
 ActionRow.propTypes = {
   position: PropTypes.oneOf(["left", "right"]),
-  // canCancel: PropTypes.bool.isRequired,
   label: PropTypes.string.isRequired,
   open: PropTypes.bool.isRequired,
 };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RouteDetails from "./components/RouteDetails";
+import RouteDetails from "./components/RouteDetails/RouteDetails";
 import stops from "./data/stops.json";
 
 function App() {
