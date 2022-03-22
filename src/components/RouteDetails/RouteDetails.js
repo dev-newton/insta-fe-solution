@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Schedule } from "../../components";
+import { Schedule } from "@components";
 
 const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
   return (

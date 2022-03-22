@@ -1,5 +1,3 @@
-import React from "react";
-
 const Select = ({ label, size, color, children }) => {
   return (
     <div className="input_wrapper select">

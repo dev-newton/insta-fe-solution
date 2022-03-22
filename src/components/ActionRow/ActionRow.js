@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { TextIcon } from "../../components";
+import { TextIcon } from "@components";
 
 const ActionRow = ({
   position,

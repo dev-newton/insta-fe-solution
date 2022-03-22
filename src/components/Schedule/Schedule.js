@@ -6,7 +6,7 @@ import {
   LocationDetails,
   Marker,
   TextIcon,
-} from "../../components";
+} from "@components";
 
 const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
   const [value, setValue] = useState({});

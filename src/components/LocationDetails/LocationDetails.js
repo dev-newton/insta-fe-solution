@@ -1,4 +1,4 @@
-import { convertToTime } from "../../helpers";
+import { convertToTime } from "@helpers";
 
 const LocationDetails = ({ address, company, openingHours }) => {
   const { from, to } = openingHours;

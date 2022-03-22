@@ -1,4 +1,4 @@
-import { Select, Input } from "../../components";
+import { Select, Input } from "@components";
 
 const CargoItemForm = ({ onChange }) => {
   return (
