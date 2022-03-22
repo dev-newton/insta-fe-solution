@@ -11,7 +11,7 @@ import {
   useFixedStrategy,
   useSemiFlexibleStrategy,
   useFlexibleStrategy,
-} from "../../hooks";
+} from "@hooks";
 
 const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
   const [value, setValue] = useState({});
