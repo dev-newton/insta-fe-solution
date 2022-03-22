@@ -6,6 +6,7 @@ const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
   return (
     <>
       <div className="container">
+        <h2>Route</h2>
         {stops.map((stop, i) => (
           <Fragment key={i}>
             <Schedule
