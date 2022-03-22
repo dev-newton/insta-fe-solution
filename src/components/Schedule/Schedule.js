@@ -7,6 +7,11 @@ import {
   Marker,
   TextIcon,
 } from "@components";
+import {
+  useFixedStrategy,
+  useSemiFlexibleStrategy,
+  useFlexibleStrategy,
+} from "../../hooks";
 
 const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
   const [value, setValue] = useState({});
@@ -27,49 +32,10 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
     setOpen(!open);
   };
 
-  let label;
-  let color;
-  let showInput;
   let scheduleInput;
 
-  const fixedStrategy = () => {
-    if (counter === length - (length - 1)) {
-      label = "Pick up date";
-      color = "primary";
-      showInput = true;
-    } else {
-      label = "Estimated arrival";
-      color = "muted";
-      showInput = false;
-    }
-  };
-
-  const semiFlexibleStrategy = () => {
-    if (counter === length - (length - 1)) {
-      label = { date: "Pick up date", from: "From", to: "To" };
-      color = "primary";
-      showInput = true;
-    } else {
-      label = { date: "Estimated arrival" };
-      color = "muted";
-      showInput = false;
-    }
-  };
-
-  const flexibleStrategy = () => {
-    if (counter === length - (length - 1)) {
-      label = { date: "Pick up date", from: "From", to: "To" };
-      color = "primary";
-      showInput = true;
-    } else {
-      label = { date: "Arrival date", from: "From", to: "To" };
-      color = "primary";
-      showInput = true;
-    }
-  };
-
   if (strategy === "fixed") {
-    fixedStrategy();
+    const { label, color, showInput } = useFixedStrategy(counter, length);
     scheduleInput = (
       <div className="input_row_wrapper">
         <Input
@@ -85,7 +51,10 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
       </div>
     );
   } else if (strategy === "semiFlexible") {
-    semiFlexibleStrategy();
+    const { label, color, showInput } = useSemiFlexibleStrategy(
+      counter,
+      length
+    );
     scheduleInput = (
       <div className="input_row_wrapper">
         <Input
@@ -121,7 +90,7 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
       </div>
     );
   } else if (strategy === "flexible") {
-    flexibleStrategy();
+    const { label, color, showInput } = useFlexibleStrategy();
     scheduleInput = (
       <div className="input_row_wrapper">
         <Input
@@ -161,7 +130,6 @@ const Schedule = ({ counter, length, stop, strategy, canAddCargo }) => {
   return (
     <>
       <div className="route">
-        {console.log(234, value)}
         <div className="route_company_wrapper">
           <Marker type={getMarkerType} value={counter} />
           <LocationDetails
