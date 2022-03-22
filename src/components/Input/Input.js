@@ -21,6 +21,7 @@ const Input = ({
             value={value}
             placeholder={placeholder}
             onChange={onChange}
+            data-testid="input"
           />
           {type === "time" && <i className="fa fa-angle-down"></i>}
         </>

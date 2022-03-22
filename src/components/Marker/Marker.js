@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 const Marker = ({ type, value }) => {
   let markerLabel;
   if (type === "icon") {
-    markerLabel = <i className="fa fa-flag"></i>;
+    markerLabel = <i data-testid="marker-value" className="fa fa-flag"></i>;
   } else if (type === "text") {
-    markerLabel = <p>{value}</p>;
+    markerLabel = <p data-testid="marker-value">{value}</p>;
   }
   return (
     <div className="pin_wrapper">
