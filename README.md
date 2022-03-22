@@ -19,7 +19,8 @@ yarn
 ```
 
 ### Running the project
-Ensure you are in the root of the project and run
+Ensure you are in the root of the project and run the command below. If the page does not redirect to a browser after running the command, 
+kindly open `http://localhost:3000/` on a browser.
 ```
 yarn start
 ```
